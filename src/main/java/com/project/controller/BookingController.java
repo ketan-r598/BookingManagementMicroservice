@@ -12,19 +12,19 @@ import com.project.model.Booking;
 import com.project.service.BookingService;
 
 @RestController
-@RequestMapping("/bookings/")
+@RequestMapping("/bookings/customer/")
 public class BookingController {
 	
 	@Autowired
 	private BookingService service;
 	
-	@PostMapping("customer/makeBooking")
+	@PostMapping("makeBooking")
 	public Booking makeBooking(@RequestBody Booking book) {
 		return service.makeBooking(book);
 	}
 	
 	
-	@DeleteMapping("customer/cancelBooking/{bookingId}")
+	@DeleteMapping("cancelBooking/{bookingId}")
 	public void deleteBooking(@PathVariable int bookingId) {
 		service.delBooking(bookingId);
 	}
