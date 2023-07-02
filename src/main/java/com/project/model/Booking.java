@@ -15,25 +15,28 @@ public class Booking {
 	private int bookingId;
 	
 	private int userId;
-	private int roomId;
+	private int hotelId;
 	private String checkInDate;
 	private String checkOutDate;
 	private	float amount;
-	private String status;
+	private int numberOfGuests;
+	private int numberOfRooms;
 	
 	public Booking() {
 		
 	}
 
-	public Booking(int bookingId, int userId, int roomId, String checkInDate, String checkOutDate, float amount,
-			String status) {
+	public Booking(int bookingId, int userId, int hotelId, String checkInDate, String checkOutDate, float amount,
+			int numberOfGuests, int numberOfRooms) {
+		super();
 		this.bookingId = bookingId;
 		this.userId = userId;
-		this.roomId = roomId;
+		this.hotelId = hotelId;
 		this.checkInDate = checkInDate;
 		this.checkOutDate = checkOutDate;
 		this.amount = amount;
-		this.status = status;
+		this.numberOfGuests = numberOfGuests;
+		this.numberOfRooms = numberOfRooms;
 	}
 
 	public int getBookingId() {
@@ -52,12 +55,12 @@ public class Booking {
 		this.userId = userId;
 	}
 
-	public int getRoomId() {
-		return roomId;
+	public int getHotelId() {
+		return hotelId;
 	}
 
-	public void setRoomId(int roomId) {
-		this.roomId = roomId;
+	public void setHotelId(int hotelId) {
+		this.hotelId = hotelId;
 	}
 
 	public String getCheckInDate() {
@@ -84,17 +87,26 @@ public class Booking {
 		this.amount = amount;
 	}
 
-	public String getStatus() {
-		return status;
+	public int getNumberOfGuests() {
+		return numberOfGuests;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
+	public void setNumberOfGuests(int numberOfGuests) {
+		this.numberOfGuests = numberOfGuests;
+	}
+
+	public int getNumberOfRooms() {
+		return numberOfRooms;
+	}
+
+	public void setNumberOfRooms(int numberOfRooms) {
+		this.numberOfRooms = numberOfRooms;
 	}
 
 	@Override
 	public String toString() {
-		return "Booking [bookingId=" + bookingId + ", userId=" + userId + ", roomId=" + roomId + ", checkInDate="
-				+ checkInDate + ", checkOutDate=" + checkOutDate + ", amount=" + amount + ", status=" + status + "]";
+		return "Booking [bookingId=" + bookingId + ", userId=" + userId + ", hotelId=" + hotelId + ", checkInDate="
+				+ checkInDate + ", checkOutDate=" + checkOutDate + ", amount=" + amount + ", numberOfGuests="
+				+ numberOfGuests + ", numberOfRooms=" + numberOfRooms + "]";
 	}
 }
